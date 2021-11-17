@@ -224,13 +224,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{api-route}}/listing/1",
+							"raw": "{{api-route}}/listing/2",
 							"host": [
 								"{{api-route}}"
 							],
 							"path": [
 								"listing",
-								"1"
+								"2"
 							]
 						},
 						"description": "This method is used to delete a listing. The listing items will also be deleted. The response will be the deleted listing.\n\n#### Response Example\n```\n{\n    \"id\": 2,\n    \"user_id\": 1,\n    \"name\": \"a\",\n    \"created_at\": null,\n    \"updated_at\": null,\n    \"listing_items_count\": 0\n}\n```"
@@ -310,20 +310,20 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "name",
-									"value": "Novo Nome",
+									"key": "text",
+									"value": "Novo Item",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{api-route}}/listing-item/1",
+							"raw": "{{api-route}}/listing-item/2",
 							"host": [
 								"{{api-route}}"
 							],
 							"path": [
 								"listing-item",
-								"1"
+								"2"
 							]
 						},
 						"description": "This method is used to create a listing\n\n#### Response Example\n```\n{\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"created_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"id\": 12\n}\n```"
@@ -340,14 +340,14 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "{{api-route}}/listing-item/check/1",
+							"raw": "{{api-route}}/listing-item/check/2",
 							"host": [
 								"{{api-route}}"
 							],
 							"path": [
 								"listing-item",
 								"check",
-								"1"
+								"2"
 							]
 						},
 						"description": "This method is used to create a listing\n\n#### Response Example\n```\n{\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"created_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"id\": 12\n}\n```"
@@ -364,14 +364,14 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "{{api-route}}/listing-item/uncheck/1",
+							"raw": "{{api-route}}/listing-item/uncheck/2",
 							"host": [
 								"{{api-route}}"
 							],
 							"path": [
 								"listing-item",
 								"uncheck",
-								"1"
+								"2"
 							]
 						},
 						"description": "This method is used to create a listing\n\n#### Response Example\n```\n{\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"created_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"id\": 12\n}\n```"
@@ -420,13 +420,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{api-route}}/listing-item/1",
+							"raw": "{{api-route}}/listing-item/2",
 							"host": [
 								"{{api-route}}"
 							],
 							"path": [
 								"listing-item",
-								"1"
+								"2"
 							]
 						},
 						"description": "This method is used to retrieve a specific listing, along with it's items\n#### Response Example\n```\n{\n    \"id\": 1,\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n    \"updated_at\": \"2021-11-17T06:05:48.000000Z\",\n    \"listing_items\": [\n        {\n            \"id\": 1,\n            \"listing_id\": 1,\n            \"text\": \"Eggs\",\n            \"checked\": null,\n            \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n            \"updated_at\": \"2021-11-17T06:05:48.000000Z\"\n        }\n    ]\n}\n```"
@@ -439,13 +439,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{api-route}}/listing-item/1",
+							"raw": "{{api-route}}/listing-item/3",
 							"host": [
 								"{{api-route}}"
 							],
 							"path": [
 								"listing-item",
-								"1"
+								"3"
 							]
 						},
 						"description": "This method is used to delete a listing. The listing items will also be deleted. The response will be the deleted listing.\n\n#### Response Example\n```\n{\n    \"id\": 2,\n    \"user_id\": 1,\n    \"name\": \"a\",\n    \"created_at\": null,\n    \"updated_at\": null,\n    \"listing_items_count\": 0\n}\n```"
