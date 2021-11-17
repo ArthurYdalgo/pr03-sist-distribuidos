@@ -37,17 +37,25 @@ $router->group([
         $router->group([
             'prefix' => 'listing',
         ], function () use ($router) {
-
-
             $router->post('', 'ListingController@store');
-            $router->put('{id}', 'ListingController@update');  
-            $router->delete('{id}', 'ListingController@destroy');  
+            $router->put('{listing_id}', 'ListingController@update');  
+            $router->delete('{listing_id}', 'ListingController@destroy');  
 
             $router->get('', 'ListingController@list');
-            $router->get('{id}', 'ListingController@get');
-    
-            
-    
+            $router->get('{listing_id}', 'ListingController@get');
+        }); 
+
+        $router->group([
+            'prefix' => 'listing-item',
+        ], function () use ($router) {
+            $router->post('{listing_id}', 'ListingItemController@store');
+            $router->put('{listing_item_id}', 'ListingItemController@update');  
+            $router->post('check/{listing_item_id}', 'ListingItemController@check');  
+            $router->post('uncheck/{listing_item_id}', 'ListingItemController@uncheck');  
+            $router->delete('{listing_item_id}', 'ListingItemController@destroy');  
+
+            $router->get('', 'ListingItemController@list');
+            $router->get('{listing_item_id}', 'ListingItemController@get');
         }); 
 
     });

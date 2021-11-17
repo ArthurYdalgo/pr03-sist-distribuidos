@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a74dd2b3-4aae-47c1-a0f1-52dd0835ba13",
+		"_postman_id": "da162b97-7408-4531-8480-42e29812bdba",
 		"name": "PR03 - Sistemas Distribuidos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -169,12 +169,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{api-route}}/listings",
+							"raw": "{{api-route}}/listing",
 							"host": [
 								"{{api-route}}"
 							],
 							"path": [
-								"listings"
+								"listing"
 							]
 						},
 						"description": "This method is used to list the listings\n\n#### Response Example \n```\n[\n    {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"name\": \"Lista de Compras\",\n        \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"updated_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"listing_items_count\": 0\n    }\n]\n```"
@@ -230,6 +230,221 @@
 							],
 							"path": [
 								"listing",
+								"1"
+							]
+						},
+						"description": "This method is used to delete a listing. The listing items will also be deleted. The response will be the deleted listing.\n\n#### Response Example\n```\n{\n    \"id\": 2,\n    \"user_id\": 1,\n    \"name\": \"a\",\n    \"created_at\": null,\n    \"updated_at\": null,\n    \"listing_items_count\": 0\n}\n```"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{jwt_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Listing Items",
+			"item": [
+				{
+					"name": "Create Listing Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "text",
+									"value": "Lista de Compras",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api-route}}/listing-item/1",
+							"host": [
+								"{{api-route}}"
+							],
+							"path": [
+								"listing-item",
+								"1"
+							]
+						},
+						"description": "This method is used to create a listing\n\n#### Response Example\n```\n{\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"created_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"id\": 12\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Listing Item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Novo Nome",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api-route}}/listing-item/1",
+							"host": [
+								"{{api-route}}"
+							],
+							"path": [
+								"listing-item",
+								"1"
+							]
+						},
+						"description": "This method is used to create a listing\n\n#### Response Example\n```\n{\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"created_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"id\": 12\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Check Listing Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{api-route}}/listing-item/check/1",
+							"host": [
+								"{{api-route}}"
+							],
+							"path": [
+								"listing-item",
+								"check",
+								"1"
+							]
+						},
+						"description": "This method is used to create a listing\n\n#### Response Example\n```\n{\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"created_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"id\": 12\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Uncheck Listing Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{api-route}}/listing-item/uncheck/1",
+							"host": [
+								"{{api-route}}"
+							],
+							"path": [
+								"listing-item",
+								"uncheck",
+								"1"
+							]
+						},
+						"description": "This method is used to create a listing\n\n#### Response Example\n```\n{\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"created_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"id\": 12\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "List Listing Items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-route}}/listing-item",
+							"host": [
+								"{{api-route}}"
+							],
+							"path": [
+								"listing-item"
+							]
+						},
+						"description": "This method is used to list the listings\n\n#### Response Example \n```\n[\n    {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"name\": \"Lista de Compras\",\n        \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"updated_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"listing_items_count\": 0\n    }\n]\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Listing Item",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"accept": true,
+							"accept-encoding": true,
+							"connection": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-route}}/listing-item/1",
+							"host": [
+								"{{api-route}}"
+							],
+							"path": [
+								"listing-item",
+								"1"
+							]
+						},
+						"description": "This method is used to retrieve a specific listing, along with it's items\n#### Response Example\n```\n{\n    \"id\": 1,\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n    \"updated_at\": \"2021-11-17T06:05:48.000000Z\",\n    \"listing_items\": [\n        {\n            \"id\": 1,\n            \"listing_id\": 1,\n            \"text\": \"Eggs\",\n            \"checked\": null,\n            \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n            \"updated_at\": \"2021-11-17T06:05:48.000000Z\"\n        }\n    ]\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Listing Item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api-route}}/listing-item/1",
+							"host": [
+								"{{api-route}}"
+							],
+							"path": [
+								"listing-item",
 								"1"
 							]
 						},

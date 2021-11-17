@@ -15,6 +15,6 @@ class ListingItem extends Model
     }
 
     public function user(){
-        return $this->listing()->user();
+        return $this->listing->user;
     }
 }

@@ -11,8 +11,8 @@ class ListingController extends Controller
         return auth()->user()->listings()->withCount('listingItems')->get();
     }
 
-    public function get($id){        
-        $listing = Listing::with('listingItems')->find($id);
+    public function get($listing_id){        
+        $listing = Listing::with('listingItems')->find($listing_id);
         
         if(!$listing){
             return response()->json(['error_message' => 'listing not found'],404);
@@ -25,13 +25,13 @@ class ListingController extends Controller
         return $listing;
     }
 
-    public function update(Request $request, $id){        
+    public function update(Request $request, $listing_id){        
 
         $this->validate($request, [
             'name' => 'required|string',
         ]);
         
-        $listing = Listing::find($id);                
+        $listing = Listing::find($listing_id);                
     
         if(!$listing){
             return response()->json(['error_message' => 'listing not found'],404);
@@ -62,8 +62,8 @@ class ListingController extends Controller
         return $listing;
     }
 
-    public function destroy($id){
-        $listing = Listing::withCount('listingItems')->find($id);
+    public function destroy($listing_id){
+        $listing = Listing::withCount('listingItems')->find($listing_id);
 
         if(!$listing){
             return response()->json(['error_message' => 'listing not found'],404);
