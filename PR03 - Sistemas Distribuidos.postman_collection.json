@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "a74dd2b3-4aae-47c1-a0f1-52dd0835ba13",
+		"name": "PR03 - Sistemas Distribuidos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"jwt_token\", pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "arthur@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "senha123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api-route}}/login",
+							"host": [
+								"{{api-route}}"
+							],
+							"path": [
+								"login"
+							]
+						},
+						"description": "This method is used to receive a JWT token for further access\n\n#### Response Example\n```\n{\n\"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9wcjAzLXNpc3QtZGlzdHJpYnVpZG9zLnRlc3RcL2FwaVwvbG9naW4iLCJpYXQiOjE2MzcxMjc2NjIsImV4cCI6MTYzNzEzMTI2MiwibmJmIjoxNjM3MTI3NjYyLCJqdGkiOiJmZFBJUDhXNUlQcHJ0MFlGIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.XzIICXypJVqV_GPdkC5iIkoygUe7LDSWC69z20JoAF4\",\n    \"token_type\": \"bearer\",\n    \"expires_in\": 3600\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"jwt_token\", pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Arthur Ydalgo",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "arthur@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "senha123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api-route}}/register",
+							"host": [
+								"{{api-route}}"
+							],
+							"path": [
+								"register"
+							]
+						},
+						"description": "This method is used to create a user for further use\n\n#### Response Example\n```\n{\n\"user\": {\n        \"name\": \"Arthur Ydalgo\",\n        \"email\": \"arthur_email@gmail.com\",\n        \"updated_at\": \"2021-11-17T06:24:00.000000Z\",\n        \"created_at\": \"2021-11-17T06:24:00.000000Z\",\n        \"id\": 2\n    },\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9wcjAzLXNpc3QtZGlzdHJpYnVpZG9zLnRlc3RcL2FwaVwvcmVnaXN0ZXIiLCJpYXQiOjE2MzcxMzAyNDAsImV4cCI6MTYzNzEzMzg0MCwibmJmIjoxNjM3MTMwMjQwLCJqdGkiOiJoQlpLTmhoNWJic2NWS040Iiwic3ViIjoyLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.GNjJezIqjyRjA9TPh_VgXUOfHDv3DUTVa2SWtMg4GUw\",\n    \"token_type\": \"bearer\",\n    \"expires_in\": 3600,\n    \"message\": \"CREATED\"\n}\n```"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Listings",
+			"item": [
+				{
+					"name": "Create Listing",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Lista de Compras",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api-route}}/listing",
+							"host": [
+								"{{api-route}}"
+							],
+							"path": [
+								"listing"
+							]
+						},
+						"description": "This method is used to create a listing\n\n#### Response Example\n```\n{\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"created_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"id\": 12\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Listing Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Novo Nome",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api-route}}/listing/1",
+							"host": [
+								"{{api-route}}"
+							],
+							"path": [
+								"listing",
+								"1"
+							]
+						},
+						"description": "This method is used to create a listing\n\n#### Response Example\n```\n{\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"created_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"id\": 12\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "List Listings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-route}}/listings",
+							"host": [
+								"{{api-route}}"
+							],
+							"path": [
+								"listings"
+							]
+						},
+						"description": "This method is used to list the listings\n\n#### Response Example \n```\n[\n    {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"name\": \"Lista de Compras\",\n        \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"updated_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"listing_items_count\": 0\n    }\n]\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Listing",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"accept": true,
+							"accept-encoding": true,
+							"connection": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-route}}/listing/1",
+							"host": [
+								"{{api-route}}"
+							],
+							"path": [
+								"listing",
+								"1"
+							]
+						},
+						"description": "This method is used to retrieve a specific listing, along with it's items\n#### Response Example\n```\n{\n    \"id\": 1,\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n    \"updated_at\": \"2021-11-17T06:05:48.000000Z\",\n    \"listing_items\": [\n        {\n            \"id\": 1,\n            \"listing_id\": 1,\n            \"text\": \"Eggs\",\n            \"checked\": null,\n            \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n            \"updated_at\": \"2021-11-17T06:05:48.000000Z\"\n        }\n    ]\n}\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Listing",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api-route}}/listing/1",
+							"host": [
+								"{{api-route}}"
+							],
+							"path": [
+								"listing",
+								"1"
+							]
+						},
+						"description": "This method is used to delete a listing. The listing items will also be deleted. The response will be the deleted listing.\n\n#### Response Example\n```\n{\n    \"id\": 2,\n    \"user_id\": 1,\n    \"name\": \"a\",\n    \"created_at\": null,\n    \"updated_at\": null,\n    \"listing_items_count\": 0\n}\n```"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{jwt_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api-route",
+			"value": "http://pr03-sist-distribuidos.test/api"
+		},
+		{
+			"key": "jwt_token",
+			"value": ""
+		}
+	]
+}
