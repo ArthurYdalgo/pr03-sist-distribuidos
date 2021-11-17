@@ -28,11 +28,29 @@ $router->group([
 
 
     $router->group([
-        'middleware' => 'auth',
+        'middleware' => 'auth:api',
     ], function () use ($router) {
-
         $router->post('logout', 'AuthController@logout');
         $router->get('refresh', 'AuthController@refresh');
-        $router->post('refresh', 'AuthController@refresh');
+        $router->post('refresh', 'AuthController@refresh');        
+
+        $router->group([
+            'prefix' => 'listing',
+        ], function () use ($router) {
+
+
+            $router->post('', 'ListingController@store');
+            $router->put('{id}', 'ListingController@update');  
+            $router->delete('{id}', 'ListingController@destroy');  
+
+            $router->get('', 'ListingController@list');
+            $router->get('{id}', 'ListingController@get');
+    
+            
+    
+        }); 
+
     });
+
+
 });
