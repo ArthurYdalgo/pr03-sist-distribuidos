@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "da162b97-7408-4531-8480-42e29812bdba",
+		"_postman_id": "cdb21999-8f5f-4053-8feb-ab436ab3c1e6",
 		"name": "PR03 - Sistemas Distribuidos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -135,7 +135,7 @@
 					"response": []
 				},
 				{
-					"name": "Create Listing Copy",
+					"name": "Update Listing",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -159,7 +159,7 @@
 								"1"
 							]
 						},
-						"description": "This method is used to create a listing\n\n#### Response Example\n```\n{\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"created_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"id\": 12\n}\n```"
+						"description": "This method is used to update a listing\n\n#### Response Example\n```\n{\n    \"id\": 1,\n    \"user_id\": 1,\n    \"name\": \"Novo Nome\",\n    \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n    \"updated_at\": \"2021-11-17T06:55:33.000000Z\"\n}\n```"
 					},
 					"response": []
 				},
@@ -205,13 +205,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{api-route}}/listing/1",
+							"raw": "{{api-route}}/listing/14",
 							"host": [
 								"{{api-route}}"
 							],
 							"path": [
 								"listing",
-								"1"
+								"14"
 							]
 						},
 						"description": "This method is used to retrieve a specific listing, along with it's items\n#### Response Example\n```\n{\n    \"id\": 1,\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n    \"updated_at\": \"2021-11-17T06:05:48.000000Z\",\n    \"listing_items\": [\n        {\n            \"id\": 1,\n            \"listing_id\": 1,\n            \"text\": \"Eggs\",\n            \"checked\": null,\n            \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n            \"updated_at\": \"2021-11-17T06:05:48.000000Z\"\n        }\n    ]\n}\n```"
@@ -297,7 +297,7 @@
 								"1"
 							]
 						},
-						"description": "This method is used to create a listing\n\n#### Response Example\n```\n{\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"created_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"id\": 12\n}\n```"
+						"description": "This method is used to create a listing item for a specific listing\n\n#### Response Example\n```\n{\n    \"listing_id\": 1,\n    \"text\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-18T23:19:05.000000Z\",\n    \"created_at\": \"2021-11-18T23:19:05.000000Z\",\n    \"id\": 6\n}\n```"
 					},
 					"response": []
 				},
@@ -326,7 +326,7 @@
 								"2"
 							]
 						},
-						"description": "This method is used to create a listing\n\n#### Response Example\n```\n{\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"created_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"id\": 12\n}\n```"
+						"description": "This method is used to update a listing item\n\n#### Response Example\n```\n{\n    \"id\": 2,\n    \"listing_id\": 1,\n    \"text\": \"Novo Item\",\n    \"checked\": 0,\n    \"created_at\": \"2021-11-18T23:13:25.000000Z\",\n    \"updated_at\": \"2021-11-18T23:19:27.000000Z\",\n    \"listing\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"name\": \"Novo Nome\",\n        \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"updated_at\": \"2021-11-17T06:55:33.000000Z\",\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Arthur Ydalgo\",\n            \"email\": \"arthur@gmail.com\",\n            \"email_verified_at\": null,\n            \"remember_token\": null,\n            \"created_at\": \"2021-11-17T04:48:44.000000Z\",\n            \"updated_at\": \"2021-11-17T04:48:44.000000Z\"\n        }\n    }\n}\n```"
 					},
 					"response": []
 				},
@@ -350,7 +350,7 @@
 								"2"
 							]
 						},
-						"description": "This method is used to create a listing\n\n#### Response Example\n```\n{\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"created_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"id\": 12\n}\n```"
+						"description": "This method is used to check a listing item (which means it sets the \"checked\" attribute as true)\n\n#### Response Example\n```\n{\n    \"id\": 2,\n    \"listing_id\": 1,\n    \"text\": \"Novo Item\",\n    \"checked\": true,\n    \"created_at\": \"2021-11-18T23:13:25.000000Z\",\n    \"updated_at\": \"2021-11-18T23:21:29.000000Z\",\n    \"listing\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"name\": \"Novo Nome\",\n        \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"updated_at\": \"2021-11-17T06:55:33.000000Z\",\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Arthur Ydalgo\",\n            \"email\": \"arthur@gmail.com\",\n            \"email_verified_at\": null,\n            \"remember_token\": null,\n            \"created_at\": \"2021-11-17T04:48:44.000000Z\",\n            \"updated_at\": \"2021-11-17T04:48:44.000000Z\"\n        }\n    }\n}\n```"
 					},
 					"response": []
 				},
@@ -374,7 +374,7 @@
 								"2"
 							]
 						},
-						"description": "This method is used to create a listing\n\n#### Response Example\n```\n{\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"updated_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"created_at\": \"2021-11-17T06:17:57.000000Z\",\n    \"id\": 12\n}\n```"
+						"description": "This method is used to uncheck a listing item (which means it sets the \"checked\" attribute as false)\n\n#### Response Example\n```\n{\n    \"id\": 2,\n    \"listing_id\": 1,\n    \"text\": \"Novo Item\",\n    \"checked\": false,\n    \"created_at\": \"2021-11-18T23:13:25.000000Z\",\n    \"updated_at\": \"2021-11-18T23:21:29.000000Z\",\n    \"listing\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"name\": \"Novo Nome\",\n        \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"updated_at\": \"2021-11-17T06:55:33.000000Z\",\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Arthur Ydalgo\",\n            \"email\": \"arthur@gmail.com\",\n            \"email_verified_at\": null,\n            \"remember_token\": null,\n            \"created_at\": \"2021-11-17T04:48:44.000000Z\",\n            \"updated_at\": \"2021-11-17T04:48:44.000000Z\"\n        }\n    }\n}\n```"
 					},
 					"response": []
 				},
@@ -392,7 +392,7 @@
 								"listing-item"
 							]
 						},
-						"description": "This method is used to list the listings\n\n#### Response Example \n```\n[\n    {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"name\": \"Lista de Compras\",\n        \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"updated_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"listing_items_count\": 0\n    }\n]\n```"
+						"description": "This method is used to list the listing items\n\n#### Response Example \n```\n[\n    {\n        \"id\": 1,\n        \"listing_id\": 1,\n        \"text\": \"Eggs\",\n        \"checked\": null,\n        \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"updated_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"laravel_through_key\": 1\n    },\n    {\n        \"id\": 2,\n        \"listing_id\": 1,\n        \"text\": \"Novo Item\",\n        \"checked\": 0,\n        \"created_at\": \"2021-11-18T23:13:25.000000Z\",\n        \"updated_at\": \"2021-11-18T23:21:44.000000Z\",\n        \"laravel_through_key\": 1\n    },\n    {\n        \"id\": 4,\n        \"listing_id\": 1,\n        \"text\": \"Lista de Compras\",\n        \"checked\": null,\n        \"created_at\": \"2021-11-18T23:13:28.000000Z\",\n        \"updated_at\": \"2021-11-18T23:13:28.000000Z\",\n        \"laravel_through_key\": 1\n    },\n    {\n        \"id\": 5,\n        \"listing_id\": 1,\n        \"text\": \"Lista de Compras\",\n        \"checked\": null,\n        \"created_at\": \"2021-11-18T23:13:29.000000Z\",\n        \"updated_at\": \"2021-11-18T23:13:29.000000Z\",\n        \"laravel_through_key\": 1\n    },\n    {\n        \"id\": 6,\n        \"listing_id\": 1,\n        \"text\": \"Lista de Compras\",\n        \"checked\": null,\n        \"created_at\": \"2021-11-18T23:19:05.000000Z\",\n        \"updated_at\": \"2021-11-18T23:19:05.000000Z\",\n        \"laravel_through_key\": 1\n    }\n]\n```"
 					},
 					"response": []
 				},
@@ -429,7 +429,7 @@
 								"2"
 							]
 						},
-						"description": "This method is used to retrieve a specific listing, along with it's items\n#### Response Example\n```\n{\n    \"id\": 1,\n    \"user_id\": 1,\n    \"name\": \"Lista de Compras\",\n    \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n    \"updated_at\": \"2021-11-17T06:05:48.000000Z\",\n    \"listing_items\": [\n        {\n            \"id\": 1,\n            \"listing_id\": 1,\n            \"text\": \"Eggs\",\n            \"checked\": null,\n            \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n            \"updated_at\": \"2021-11-17T06:05:48.000000Z\"\n        }\n    ]\n}\n```"
+						"description": "This method is used to retrieve a specific listing item, along with it's listing, and listing's user\n#### Response Example\n```\n{\n    \"id\": 2,\n    \"listing_id\": 1,\n    \"text\": \"Novo Item\",\n    \"checked\": 0,\n    \"created_at\": \"2021-11-18T23:13:25.000000Z\",\n    \"updated_at\": \"2021-11-18T23:21:44.000000Z\",\n    \"listing\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"name\": \"Novo Nome\",\n        \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"updated_at\": \"2021-11-17T06:55:33.000000Z\",\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Arthur Ydalgo\",\n            \"email\": \"arthur@gmail.com\",\n            \"email_verified_at\": null,\n            \"remember_token\": null,\n            \"created_at\": \"2021-11-17T04:48:44.000000Z\",\n            \"updated_at\": \"2021-11-17T04:48:44.000000Z\"\n        }\n    }\n}\n```"
 					},
 					"response": []
 				},
@@ -448,7 +448,7 @@
 								"3"
 							]
 						},
-						"description": "This method is used to delete a listing. The listing items will also be deleted. The response will be the deleted listing.\n\n#### Response Example\n```\n{\n    \"id\": 2,\n    \"user_id\": 1,\n    \"name\": \"a\",\n    \"created_at\": null,\n    \"updated_at\": null,\n    \"listing_items_count\": 0\n}\n```"
+						"description": "This method is used to delete a listing item.\nThe response will be the deleted listing item.\n\n#### Response Example\n```\n{\n    \"id\": 3,\n    \"listing_id\": 1,\n    \"text\": \"Lista de Compras\",\n    \"checked\": null,\n    \"created_at\": \"2021-11-18T23:13:27.000000Z\",\n    \"updated_at\": \"2021-11-18T23:13:27.000000Z\",\n    \"listing\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"name\": \"Novo Nome\",\n        \"created_at\": \"2021-11-17T06:05:48.000000Z\",\n        \"updated_at\": \"2021-11-17T06:55:33.000000Z\",\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Arthur Ydalgo\",\n            \"email\": \"arthur@gmail.com\",\n            \"email_verified_at\": null,\n            \"remember_token\": null,\n            \"created_at\": \"2021-11-17T04:48:44.000000Z\",\n            \"updated_at\": \"2021-11-17T04:48:44.000000Z\"\n        }\n    }\n}\n```"
 					},
 					"response": []
 				}
