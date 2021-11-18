@@ -15,4 +15,16 @@ Descompacte o arquivo `php-8.0.7-Win32-vs16-x64.zip` no diretório `C:\laragon\b
 
 Este diretório ficará assim:
 
+No MySQL Workbench, crie uma nova conexão, dê um nome e clique em ok
+
+
+Vá na aba Schemas
+
+
+
+Clique com o botão direito e clique em "Create Schema"
+
+Insira o nome "pr-03" e clique em "Apply"
+
+
 
