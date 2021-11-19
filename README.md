@@ -18,6 +18,10 @@ Este diretório ficará parecido com isso (as versões já presentes podem varia
 
 ![image](https://user-images.githubusercontent.com/25585428/142513831-30236d38-e3f0-4e2d-851c-468af83686b1.png)
 
+No Laragon, clique no meio com o botão direito, e altera a versão do PHP para a 8.0
+
+![image](https://user-images.githubusercontent.com/25585428/142516453-633a1dc1-1353-4ca1-ad68-75cbc4d9f409.png)
+
 
 No MySQL Workbench, crie uma nova conexão, dê um nome e clique em ok
 
